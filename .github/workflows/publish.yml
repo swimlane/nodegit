@@ -11,7 +11,7 @@ jobs:
     name: build
     strategy:
       matrix:
-        node: [20]
+        node: [18.17.0]
         os:
           # macos-14 is arm64 (m1)
           - name: darwin
@@ -96,7 +96,7 @@ jobs:
           node-version: 20
           check-latest: true
           registry-url: "https://registry.npmjs.org"
-          scope: "readme"
+          scope: "swimlane"
       - name: download built libraries
         id: download
         uses: actions/download-artifact@v4

@@ -26,7 +26,7 @@
     }
   ],
   "main": "lib/nodegit.js",
-  "repository": "github:readmeio/nodegit",
+  "repository": "github:swimlane/nodegit",
   "directories": {
     "build": "./build",
     "lib": "./lib"
