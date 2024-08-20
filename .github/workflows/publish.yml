@@ -117,10 +117,10 @@ jobs:
           mv ${{ steps.download.outputs.download-path}}/prebuild-macOS-ARM64/darwin-arm64/* ./prebuilds/darwin-arm64/
           mv ${{ steps.download.outputs.download-path}}/prebuild-macOS-X64/darwin-x64/* ./prebuilds/darwin-x64/
           find ./prebuilds
-      - name: generate source code
-        run: npm run preinstall
       - name: npm install
         run: npm ci --ignore-scripts
+      - name: generate source code
+        run: npm run preinstall
       - name: publish
         run: |
           (cat "$NPM_CONFIG_USERCONFIG" || true) && npm publish --provenance --access public
