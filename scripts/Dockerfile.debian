@@ -10,5 +10,6 @@ RUN apt-get update -y && \
 ADD . /app
 WORKDIR /app
 
-RUN npm ci && \
+RUN npm ci --ignore-scripts && \
+  npm run preinstall && \
   npx prebuildify --napi --strip --tag-libc -t "$(node --version | tr -d 'v')"

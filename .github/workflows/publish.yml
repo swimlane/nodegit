@@ -44,7 +44,8 @@ jobs:
           [[ $(uname -o) == *Linux ]] && \
             sudo apt-get update && \
             sudo apt-get install -y software-properties-common git build-essential clang libssl-dev libkrb5-dev libc++-dev wget python3
-          npm ci
+          npm ci --ignore-scripts
+          npm run preinstall
           npx prebuildify --napi --strip --tag-libc -t "$(node --version | tr -d 'v')"
       - uses: actions/upload-artifact@v4
         with:
@@ -117,7 +118,7 @@ jobs:
           mv ${{ steps.download.outputs.download-path}}/prebuild-macOS-X64/darwin-x64/* ./prebuilds/darwin-x64/
           find ./prebuilds
       - name: npm install
-        run: npm ci
+        run: npm ci --ignore-scripts
       - name: publish
         run: |
           (cat "$NPM_CONFIG_USERCONFIG" || true) && npm publish --provenance --access public
