@@ -68,11 +68,11 @@ jobs:
           docker build --platform=linux/amd64 --tag nodegit-linux-musl-amd64 -f scripts/Dockerfile.alpine .
           docker create --platform=linux/amd64 --name nodegit-linux-musl-amd64 nodegit-linux-musl-amd64
           docker cp "nodegit-linux-musl-amd64:/app/prebuilds" .
-      - name: build linux musl arm
-        run: |
-          docker build --platform=linux/arm64 --tag nodegit-linux-musl-arm64 -f scripts/Dockerfile.alpine .
-          docker create --platform=linux/arm64 --name nodegit-linux-musl-arm64 nodegit-linux-musl-arm64
-          docker cp "nodegit-linux-musl-arm64:/app/prebuilds" .
+      # - name: build linux musl arm
+      #   run: |
+      #     docker build --platform=linux/arm64 --tag nodegit-linux-musl-arm64 -f scripts/Dockerfile.alpine .
+      #     docker create --platform=linux/arm64 --name nodegit-linux-musl-arm64 nodegit-linux-musl-arm64
+      #     docker cp "nodegit-linux-musl-arm64:/app/prebuilds" .
       - name: "list the generated files"
         run: find prebuilds
       - uses: actions/upload-artifact@v4
@@ -108,6 +108,7 @@ jobs:
           mkdir -p prebuilds/linux-arm64
           mkdir -p prebuilds/linux-x64
           mkdir -p prebuilds/darwin-arm64
+          mkdir -p prebuilds/darwin-x64
           find ${{ steps.download.outputs.download-path }}
           mv ${{ steps.download.outputs.download-path}}/prebuild-Linux-X64/linux-x64/* ./prebuilds/linux-x64/
           mv ${{ steps.download.outputs.download-path}}/prebuild-linux-arm64/linux-arm64/* ./prebuilds/linux-arm64/
