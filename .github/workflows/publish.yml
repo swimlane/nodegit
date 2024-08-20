@@ -46,7 +46,7 @@ jobs:
             sudo apt-get install -y software-properties-common git build-essential clang libssl-dev libkrb5-dev libc++-dev wget python3
           npm ci --ignore-scripts
           npm run preinstall
-          npx prebuildify --napi --strip --tag-libc -t "$(node --version | tr -d 'v')"
+          npx prebuildify --strip --tag-libc -t "$(node --version | tr -d 'v')"
       - uses: actions/upload-artifact@v4
         with:
           name: prebuild-${{ runner.os }}-${{ runner.arch }}

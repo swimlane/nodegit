@@ -12,4 +12,4 @@ WORKDIR /app
 
 RUN npm ci --ignore-scripts && \
   npm run preinstall && \
-  npx prebuildify --napi --strip --tag-libc -t "$(node --version | tr -d 'v')"
+  npx prebuildify --strip --tag-libc -t "$(node --version | tr -d 'v')"
