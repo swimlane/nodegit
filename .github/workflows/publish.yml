@@ -11,7 +11,7 @@ jobs:
     name: build
     strategy:
       matrix:
-        node: [18.17.0]
+        node: [20.0.0]
         os:
           # macos-14 is arm64 (m1)
           - name: darwin
@@ -37,7 +37,7 @@ jobs:
           submodules: true
       - uses: actions/setup-node@v4
         with:
-          node-version: 18.17.0
+          node-version: 20.0.0
           check-latest: true
       - name: Prebuildify
         run: |
