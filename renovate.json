@@ -3,5 +3,6 @@
   "extends": [
     "github>swimlane/renovate-config:swimlane-default.json5"
   ],
-  "semanticCommitScope": ""
+  "semanticCommitScope": "",
+  "forkProcessing": "enabled"
 }
