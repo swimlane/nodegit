@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@axosoft/nan": "^2.20.0-gk.1",
-    "fs-extra": "^7.0.0",
+    "fs-extra": "^11.0.0",
     "got": "^11.8.6",
     "json5": "^2.1.0",
     "lodash": "^4.17.14",
