@@ -1,4 +1,4 @@
-FROM node:20.0.0-bullseye
+FROM node:20.18.0-bullseye
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LC_ALL en_US.UTF-8
